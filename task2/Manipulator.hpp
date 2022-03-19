@@ -68,13 +68,16 @@ class Manipulator {
         {
             m_r = r;
         }
+        void setPoint(const Point<T>& point)
+        {
+            m_x = point.getX();
+            m_y = point.getY();
+        }
         T getHypotenuse(const Point<T>& point)
         {
             if (m_x == point.getX() && m_y == point.getY())
                 return (0);
             T r = sqrt(pow(m_x - point.getX(), 2) + pow(m_y - point.getY(), 2));
-            if (r > m_r)
-                return (0);
             return (r);
         }
 };
