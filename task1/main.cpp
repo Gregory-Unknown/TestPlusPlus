@@ -15,16 +15,14 @@ int main()
         Point<int> point;
         int hipotenuse1 = O1.getHypotenuse(point);
         int hipotenuse2 = O2.getHypotenuse(point);
-        int res = -1;
-        res = min(hipotenuse1, hipotenuse1);
-        if (!hipotenuse1) 
-            res = hipotenuse2;
-        if (!hipotenuse2)
-            res = hipotenuse1;
-        if (!res)
-            std::cerr << "Error parametrs !" << std::endl;
+        if (hipotenuse1 && (hipotenuse1 < hipotenuse2 || !hipotenuse2)) 
+            std::cout << "RESULT : first manipulator\n" << O1 << std::endl;
+        else if (hipotenuse2 && (hipotenuse2 < hipotenuse1 || !hipotenuse1))
+            std::cout << "RESULT : second manipulator\n" << O2 << std::endl;
+        else if (hipotenuse1 && hipotenuse1 == hipotenuse2)
+            std::cout << "RESULT : first and second manipulator\n" << O1 << std::endl << O2 << std::endl;
         else
-            std::cout << "RESULT : " << res << std::endl;
+            std::cerr << "Error parametrs !" << std::endl;
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;
 	    return (1);
