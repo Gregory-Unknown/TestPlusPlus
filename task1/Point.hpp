@@ -30,6 +30,10 @@ class Point {
         {
             *this = point;
         }
+        ~Point ()
+        {
+
+        }
         Point& operator=(const Point& point)
         {
             if (*this != point) {
@@ -42,7 +46,7 @@ class Point {
         {
             return (m_x);
         }
-        T getY() const 
+        T getY() const
         {
             return (m_y);
         }

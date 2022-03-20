@@ -35,6 +35,10 @@ class Manipulator {
         {
             *this = man;
         }
+        ~Manipulator ()
+        {
+            
+        }
         Manipulator& operator=(const Manipulator& man)
         {
             if (*this != man) {
@@ -48,7 +52,7 @@ class Manipulator {
         {
             return (m_x);
         }
-        T getY() const 
+        T getY() const
         {
             return (m_y);
         }
